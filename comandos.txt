@@ -1,0 +1,5 @@
+docker build -t adrianooselame/laravel .
+docker run -d --name laravel -v $(pwd):/var/www -p 9000:9000 adrianooselame/laravel
+docker exec -it laravel apk add bash -- adiciona o bash no container
+docker exec -it laravel bash -- roda o bash do container
+php artisan server --host=0.0.0.0 -- roda o php-fpm serve dentro do container
